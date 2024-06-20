@@ -18,6 +18,7 @@ import { ShoppingEditComponent } from './project/components/shopping-list/shoppi
 import { BasicHighlightDirective } from './project/directives/basic.highlight';
 import { BetterHighlightDirective } from './project/directives/better-highlight.directive';
 import { CustomDirectiveDirective } from './project/directives/custom-directive.directive';
+import { DropdownDirective } from './project/components/shared/dropdown.directive';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +35,8 @@ import { CustomDirectiveDirective } from './project/directives/custom-directive.
     ShoppingEditComponent,
     BasicHighlightDirective,
     BetterHighlightDirective,
-    CustomDirectiveDirective
+    CustomDirectiveDirective,
+    DropdownDirective
   ],
   imports: [
     FormsModule,
