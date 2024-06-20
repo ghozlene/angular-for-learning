@@ -8,8 +8,7 @@
 <div class="row">
   <div class="col-12">
 
-    <app-recipe-item (selectedRecipe)="onSelectedRecipe(recipeEl)" [recipe]="recipeEl"
-      *ngFor="let recipeEl of recipes"></app-recipe-item>
+    <app-recipe-item [recipe]="recipeEl" *ngFor="let recipeEl of recipes"></app-recipe-item>
   </div>
 </div>
 <P appBasicHighlight> This is the style from the custom directive</P>
