@@ -1,5 +1,10 @@
-<p>{{recipe.name}}</p>
-
-<p>{{recipe.description}}</p>
-
-<hr>
+<a (click)="onSelectRecipe()" href="#"
+  class="list-group-item d-flex justify-content-between align-items-center items-array">
+  <div class="float-start">
+    <h4 class="list-group-item-heading">{{recipe.name}}</h4>
+    <p class="list-group-item-text">{{recipe.description}}</p>
+  </div>
+  <span class="float-end">
+    <img src="{{recipe.imagePath}}" alt="{{recipe.name}}" class="img-fluid" style="max-height: 100px;">
+  </span>
+</a>
