@@ -12,5 +12,6 @@
       *ngFor="let recipeEl of recipes"></app-recipe-item>
   </div>
 </div>
-<P appBasicHighlight>This is the style from the custom directive</P>
-<p appBetterHighlight> this is the style apply from the appBetterHighlight</p>
+<P appBasicHighlight> This is the style from the custom directive</P>
+<p appBetterHighlight defaultBackgroundColor="red" [customBackgroundColor]="'yellow'"> this is the style apply
+  from the appBetterHighlight</p>
