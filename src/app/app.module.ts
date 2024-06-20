@@ -16,6 +16,7 @@ import { RecipeItemComponent } from './project/components/recipes/recipe-list/re
 import { ShoppingListComponent } from './project/components/shopping-list/shopping-list.component';
 import { ShoppingEditComponent } from './project/components/shopping-list/shopping-edit/shopping-edit.component';
 import { BasicHighlightDirective } from './project/directives/basic.highlight';
+import { BetterHighlightDirective } from './project/directives/better-highlight.directive';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +31,8 @@ import { BasicHighlightDirective } from './project/directives/basic.highlight';
     RecipeItemComponent,
     ShoppingListComponent,
     ShoppingEditComponent,
-    BasicHighlightDirective
+    BasicHighlightDirective,
+    BetterHighlightDirective
   ],
   imports: [
     FormsModule,
