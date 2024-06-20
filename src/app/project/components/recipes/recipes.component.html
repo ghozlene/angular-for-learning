@@ -5,10 +5,16 @@
   </div>
   <div class="col-md-7">
     <app-recipe-detail *ngIf="recipeChoosed ;else recipeDetails " [recipe]="recipeChoosed"></app-recipe-detail>
+
+
     <ng-template #recipeDetails>
 
       <p>nothing to show before choose a recipe</p>
     </ng-template>
 
+    <div *appCustomDirective="recipeChoosed;else recipeDetails">
+
+      this is me
+    </div>
   </div>
 </div>

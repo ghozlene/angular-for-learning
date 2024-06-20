@@ -17,6 +17,7 @@ import { ShoppingListComponent } from './project/components/shopping-list/shoppi
 import { ShoppingEditComponent } from './project/components/shopping-list/shopping-edit/shopping-edit.component';
 import { BasicHighlightDirective } from './project/directives/basic.highlight';
 import { BetterHighlightDirective } from './project/directives/better-highlight.directive';
+import { CustomDirectiveDirective } from './project/directives/custom-directive.directive';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +33,8 @@ import { BetterHighlightDirective } from './project/directives/better-highlight.
     ShoppingListComponent,
     ShoppingEditComponent,
     BasicHighlightDirective,
-    BetterHighlightDirective
+    BetterHighlightDirective,
+    CustomDirectiveDirective
   ],
   imports: [
     FormsModule,
