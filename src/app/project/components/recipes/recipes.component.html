@@ -12,9 +12,13 @@
       <p>nothing to show before choose a recipe</p>
     </ng-template>
 
-    <div *appCustomDirective="recipeChoosed;else recipeDetails">
+  </div>
+</div>
+<div>
 
-      this is me
-    </div>
+  <div [ngSwitch]="value">
+    <p *ngSwitchCase="10">value is 10 </p>
+    <p *ngSwitchCase="15">value is 15</p>
+    <p *ngSwitchCase="100">value is 100</p>
   </div>
 </div>
