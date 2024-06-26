@@ -7,11 +7,5 @@ import { Component } from '@angular/core';
 })
 export class ComponentsComponent {
 
-  switchEvent: string = 'Recipes';
 
-  navigation(event: any) {
-
-    this.switchEvent = event;
-
-  }
 }

@@ -21,6 +21,7 @@ import { CustomDirectiveDirective } from './project/directives/custom-directive.
 import { DropdownDirective } from './project/components/shared/dropdown.directive';
 import { RecipeDirective } from './project/components/services/recipe.directive';
 import { ShoppingListDirective } from './project/components/services/shopping-list.directive';
+import { RecipeStartComponent } from './project/recipes/recipe-start/recipe-start.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +41,10 @@ import { ShoppingListDirective } from './project/components/services/shopping-li
     CustomDirectiveDirective,
     DropdownDirective,
     RecipeDirective,
-    ShoppingListDirective
+    ShoppingListDirective,
+    RecipeStartComponent,
+
+
   ],
   imports: [
     FormsModule,
