@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ShoppingListService } from '../../services/shopping-list.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { RecipeService } from '../../services/recipe.service';
 
 @Component({
@@ -14,7 +14,7 @@ export class RecipeDetailComponent {
 
 
 
-  constructor(private shoppingService: ShoppingListService, private recipeService: RecipeService, private route: ActivatedRoute) {
+  constructor(private shoppingService: ShoppingListService, private recipeService: RecipeService, private route: ActivatedRoute, private router: Router) {
 
 
   }
@@ -25,6 +25,13 @@ export class RecipeDetailComponent {
   }
 
 
+  onEditRcepie() {
+
+    this.router.navigate(['edit'], { relativeTo: this.route });
+  }
+
+
+
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
@@ -33,4 +40,6 @@ export class RecipeDetailComponent {
       this.recipe = this.recipeService.getSingleRecipe(this.id);
     });
   }
+
+
 }
