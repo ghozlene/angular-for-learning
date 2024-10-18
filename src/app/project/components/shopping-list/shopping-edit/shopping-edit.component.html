@@ -16,7 +16,7 @@
         <div class="col-xs-12">
           <button class="btn btn-success" type="submit" [disabled]="!form.valid">{{editMode? "update":"Add"}}</button>
           <button class="btn btn-danger" type="button">Remove</button>
-          <button class="btn btn-warning" type="button">Clear form</button>
+          <button class="btn btn-warning" type="button" (click)="onClear()">Clear form</button>
         </div>
       </div>
     </form>
