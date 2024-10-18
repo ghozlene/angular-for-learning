@@ -1,25 +1,28 @@
-import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Input, OnDestroy, OnInit, Output, ViewChild } from '@angular/core';
 import { Ingredient } from '../../shared/ingredients.model';
 import { ShoppingListService } from '../../services/shopping-list.service';
+import { NgForm } from '@angular/forms';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-shopping-edit',
   templateUrl: './shopping-edit.component.html',
   styleUrls: ['./shopping-edit.component.scss']
 })
-export class ShoppingEditComponent implements OnInit {
-  @ViewChild('inputName') inputName: ElementRef | undefined;
-  @ViewChild('inputAmount') inputAmount: ElementRef | undefined;
-  @Output() addIngredientToList = new EventEmitter<Ingredient>();
+export class ShoppingEditComponent implements OnInit, OnDestroy {
 
+  @Output() addIngredientToList = new EventEmitter<Ingredient>();
+  editMode: boolean = false;
+  subscriptionEdit: Subscription;
+  EditNumberIndex: number;
   constructor(private shoppingService: ShoppingListService) {
 
   }
 
-  onAddIngredient() {
+  onAddIngredient(form: NgForm) {
     const newIngredient = {
-      'name': this.inputName?.nativeElement.value,
-      'amount': this.inputAmount?.nativeElement.value
+      'name': form.value.name,
+      'amount': form.value.amount
     };
 
     this.shoppingService.addIngredientToList(newIngredient);
@@ -28,6 +31,15 @@ export class ShoppingEditComponent implements OnInit {
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
+    this.shoppingService.startedEditing.subscribe(
+      (index: number) => {
+        this.EditNumberIndex = index;
+        this.editMode = true;
+      }
+    );
+  }
+  ngOnDestroy(): void {
 
+    this.subscriptionEdit.unsubscribe();
   }
 }
