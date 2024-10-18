@@ -9,12 +9,12 @@ import { Subscription } from 'rxjs';
   templateUrl: './shopping-edit.component.html',
   styleUrls: ['./shopping-edit.component.scss']
 })
-export class ShoppingEditComponent implements OnInit, OnDestroy {
+export class ShoppingEditComponent implements OnInit {
 
   @Output() addIngredientToList = new EventEmitter<Ingredient>();
   @ViewChild('form') slForm: NgForm;
   editMode: boolean = false;
-  subscriptionEdit: Subscription;
+
   EditNumberIndex: number;
   editItem: Ingredient;
   constructor(private shoppingService: ShoppingListService) {
@@ -42,6 +42,12 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
     this.slForm.reset();
     this.editMode = false;
   }
+  onDelete() {
+    this.onClear();
+    this.shoppingService.removeIngredient(this.EditNumberIndex);
+
+
+  }
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
@@ -60,8 +66,5 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
       }
     );
   }
-  ngOnDestroy(): void {
 
-    this.subscriptionEdit.unsubscribe();
-  }
 }

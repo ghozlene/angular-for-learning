@@ -1,0 +1,14 @@
+.custom-row {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Spacing between elements */
+}
+
+.custom-row .form-control {
+  flex: 1; /* Inputs will take equal space */
+}
+
+.custom-row button {
+  flex: 0 0 auto; /* Button maintains its size */
+}
