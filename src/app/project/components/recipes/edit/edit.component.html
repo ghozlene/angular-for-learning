@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-xs-12">
-    <form>
+    <form [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
       <div class="row">
         <div class="col-xs-12">
           <button type="submit" class="btn btn-success"> Save </button>
@@ -11,7 +11,7 @@
         <div class="col-xs-12">
           <div class="form-group">
             <label for="name">Name</label>
-            <input type="text" id="name" class="form-control">
+            <input type="text" formControlName="name" id="name" class="form-control">
 
           </div>
         </div>
@@ -21,7 +21,7 @@
         <div class="col-xs-12">
           <div class="form-group">
             <label for="imagePath">Image Url</label>
-            <input type="text" id="imagePath" class="form-control">
+            <input type="text" id="imagePath" class="form-control" formControlName="imagePath">
 
           </div>
         </div>
@@ -39,15 +39,21 @@
         <div class="col-xs-12">
           <div class="form-group">
             <label for="description">Description</label>
-            <textarea type="text" rows="6" id="description" class="form-control"></textarea>
+            <textarea type="text" rows="6" id="description" class="form-control"
+              formControlName="description"></textarea>
           </div>
         </div>
       </div>
       <div class="row">
-        <div class="custom-row">
-          <input type="text" class="form-control" placeholder="Text">
-          <input type="number" class="form-control" placeholder="Number">
-          <button class="btn btn-danger">X</button>
+        <div formArrayName="ingredients">
+          <div class="custom-row" *ngFor="let ingredientCtrl of recipeForm.get('ingredients')?.controls; let i = index"
+            [formGroupName]="i">
+
+            <p>Index: {{ i }}</p>
+            <input type="text" class="form-control" placeholder="Text" formControlName="name">
+            <input type="number" class="form-control" placeholder="Number" formControlName="amount">
+            <button class="btn btn-danger" (click)="removeIngredient(i)">X</button>
+          </div>
         </div>
       </div>
 
