@@ -26,6 +26,15 @@ export class ReactiveFormTestComponent implements OnInit {
       'gender': new FormControl('male'),
       'hobbies': new FormArray([])
     });
+
+
+    this.signupForm.patchValue({
+      'userData': {
+        'username': 'achref'
+      },
+
+    });
+
   }
 
   onSubmit() {
@@ -44,4 +53,5 @@ export class ReactiveFormTestComponent implements OnInit {
     }
     return null;
   }
+
 }
