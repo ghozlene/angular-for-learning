@@ -48,7 +48,10 @@
         <span class="text-error" *ngIf="!signupForm?.valid && signupForm.touched">Please
           enter a valid data</span>
 
-        <button class="btn btn-primary" type="submit">Submit</button>
+        <div [hidden]="captcha">
+          <re-captcha (resolved)="resolved($event)" siteKey="6LcMAGcqAAAAAJ8wP6XhtcwCuOf9YIEvFJnySxo6"></re-captcha>
+        </div>
+        <button [disabled]="!captcha || !signupForm.valid" class="btn btn-primary" type="submit">Submit</button>
       </form>
     </div>
   </div>

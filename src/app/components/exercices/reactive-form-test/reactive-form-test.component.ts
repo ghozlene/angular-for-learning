@@ -10,9 +10,14 @@ export class ReactiveFormTestComponent implements OnInit {
   genders = ['male', 'female'];
 
   forbiddenUserName = ['anna', 'Christine', 'chris'];
+  captcha: string;
 
   signupForm: FormGroup;
+  constructor() {
 
+    this.captcha = '';
+
+  }
 
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
@@ -36,7 +41,10 @@ export class ReactiveFormTestComponent implements OnInit {
     });
 
   }
-
+  resolved(captchaResponse: string) {
+    this.captcha = captchaResponse;
+    console.log("resolved captchaResponse", this.captcha);
+  }
   onSubmit() {
     console.log("forms content :", this.signupForm);
   }

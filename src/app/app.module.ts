@@ -25,6 +25,7 @@ import { RecipeStartComponent } from './project/recipes/recipe-start/recipe-star
 import { EditComponent } from './project/components/recipes/edit/edit.component';
 import { Test2FormsComponent } from './components/exercices/test2-forms/test2-forms.component';
 import { ReactiveFormTestComponent } from './components/exercices/reactive-form-test/reactive-form-test.component';
+import { RecaptchaModule } from 'ng-recaptcha';
 @NgModule({
   declarations: [
     AppComponent,
@@ -56,7 +57,8 @@ import { ReactiveFormTestComponent } from './components/exercices/reactive-form-
     FormsModule,
     BrowserModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RecaptchaModule
   ],
   providers: [],
   bootstrap: [AppComponent]
