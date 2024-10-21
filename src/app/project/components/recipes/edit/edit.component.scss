@@ -12,3 +12,8 @@
 .custom-row button {
   flex: 0 0 auto; /* Button maintains its size */
 }
+
+input.ng-invalid.ng-touched,
+textarea.ng-invalid.ng-touched {
+  border: 2px solid red;
+}
