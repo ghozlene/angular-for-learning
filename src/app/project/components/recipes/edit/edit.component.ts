@@ -92,7 +92,9 @@ export class EditComponent {
 
     );
   }
-
+  removeIngredient(index: number) {
+    (<FormArray> this.recipeForm.get(['ingredients'])).removeAt(index);
+  }
   onCancel() {
     this.route.navigate(['../'], { relativeTo: this.router });
   }
