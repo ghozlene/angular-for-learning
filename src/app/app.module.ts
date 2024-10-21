@@ -28,6 +28,7 @@ import { ReactiveFormTestComponent } from './components/exercices/reactive-form-
 import { RecaptchaModule } from 'ng-recaptcha';
 import { ExercicePipeComponent } from './components/exercices/exercice-pipe/exercice-pipe.component';
 import { ShortenPipe } from './components/exercices/exercice-pipe/shorten.pipe';
+import { filterStates } from './components/exercices/exercice-pipe/filter-states.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,7 +54,8 @@ import { ShortenPipe } from './components/exercices/exercice-pipe/shorten.pipe';
     Test2FormsComponent,
     ReactiveFormTestComponent,
     ExercicePipeComponent,
-    ShortenPipe
+    ShortenPipe,
+    filterStates
 
 
 

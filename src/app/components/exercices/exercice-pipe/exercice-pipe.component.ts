@@ -32,6 +32,8 @@ export class ExercicePipeComponent {
       started: new Date(15, 1, 2017)
     }
   ];
+
+  filterStatus = '';
   getStatusClasses(server: { instanceType: string, name: string, status: string, started: Date; }) {
     return {
       'list-group-item-success': server.status === 'stable',
