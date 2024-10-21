@@ -27,6 +27,7 @@ import { Test2FormsComponent } from './components/exercices/test2-forms/test2-fo
 import { ReactiveFormTestComponent } from './components/exercices/reactive-form-test/reactive-form-test.component';
 import { RecaptchaModule } from 'ng-recaptcha';
 import { ExercicePipeComponent } from './components/exercices/exercice-pipe/exercice-pipe.component';
+import { ShortenPipe } from './components/exercices/exercice-pipe/shorten.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,6 +53,7 @@ import { ExercicePipeComponent } from './components/exercices/exercice-pipe/exer
     Test2FormsComponent,
     ReactiveFormTestComponent,
     ExercicePipeComponent,
+    ShortenPipe
 
 
 
