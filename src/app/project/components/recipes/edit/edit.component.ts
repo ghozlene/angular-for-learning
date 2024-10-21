@@ -69,4 +69,14 @@ export class EditComponent {
     console.log(this.recipeForm.get('ingredients') as FormArray);
     return this.recipeForm.get('ingredients') as FormArray;
   }
+
+  onAddIngredient() {
+    (<FormArray> this.recipeForm.get('ingredients')).push(
+      new FormGroup({
+        'name': new FormControl(),
+        'amount': new FormControl()
+      })
+
+    );
+  }
 }

@@ -48,11 +48,15 @@
         <div formArrayName="ingredients">
           <div class="custom-row" *ngFor="let ingredientCtrl of recipeForm.get('ingredients')?.controls; let i = index"
             [formGroupName]="i">
-
-            <p>Index: {{ i }}</p>
             <input type="text" class="form-control" placeholder="Text" formControlName="name">
             <input type="number" class="form-control" placeholder="Number" formControlName="amount">
             <button class="btn btn-danger" (click)="removeIngredient(i)">X</button>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-xs-12">
+            <button type="button" class="btn btn-secondary" (click)="onAddIngredient()"> Add Ingredient</button>
           </div>
         </div>
       </div>
