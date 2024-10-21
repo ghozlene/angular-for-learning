@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Recipe } from '../recipes/recipe.model';
 import { Ingredient } from '../shared/ingredients.model';
+import { Subject } from 'rxjs';
 
 
 @Injectable({
@@ -10,7 +11,7 @@ export class RecipeService {
 
   constructor() { }
 
-
+  recipeChanged = new Subject<Recipe[]>();
   private recipes: Recipe[] = [
 
     new Recipe('a test recipe', 'this is a test recipe', 'https://marketplace.canva.com/EAEzSj77_B4/2/0/1067w/canva-beige-cute-recipe-card-xDHAiGpfgKU.jpg', [
@@ -37,4 +38,15 @@ export class RecipeService {
     return this.recipes[index];
 
   };
+
+  addRecipe(recipe: Recipe) {
+
+    this.recipes.push(recipe);
+    this.recipeChanged.next(this.recipes.slice());
+  }
+
+  updateRecipe(index: number, newRecipe: Recipe) {
+    this.recipes[index] = newRecipe;
+    this.recipeChanged.next(this.recipes.slice());
+  }
 }
