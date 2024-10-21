@@ -26,6 +26,7 @@ import { EditComponent } from './project/components/recipes/edit/edit.component'
 import { Test2FormsComponent } from './components/exercices/test2-forms/test2-forms.component';
 import { ReactiveFormTestComponent } from './components/exercices/reactive-form-test/reactive-form-test.component';
 import { RecaptchaModule } from 'ng-recaptcha';
+import { ExercicePipeComponent } from './components/exercices/exercice-pipe/exercice-pipe.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,6 +51,8 @@ import { RecaptchaModule } from 'ng-recaptcha';
     EditComponent,
     Test2FormsComponent,
     ReactiveFormTestComponent,
+    ExercicePipeComponent,
+
 
 
   ],
