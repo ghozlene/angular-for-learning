@@ -34,6 +34,7 @@ export class RecipeDetailComponent {
   onDeleteRecipe() {
 
     this.recipeService.recipeDeleted(this.id);
+    this.router.navigate(['/recipes'], { relativeTo: this.route });
   }
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
