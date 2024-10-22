@@ -12,23 +12,29 @@ export class RecipeService {
   constructor() { }
 
   recipeChanged = new Subject<Recipe[]>();
-  private recipes: Recipe[] = [
+  //private recipes: Recipe[] = [
 
-    new Recipe('a test recipe', 'this is a test recipe', 'https://marketplace.canva.com/EAEzSj77_B4/2/0/1067w/canva-beige-cute-recipe-card-xDHAiGpfgKU.jpg', [
+  //  new Recipe('a test recipe', 'this is a test recipe', 'https://marketplace.canva.com/EAEzSj77_B4/2/0/1067w/canva-beige-cute-recipe-card-xDHAiGpfgKU.jpg', [
 
-      new Ingredient('meat', 5),
-      new Ingredient('french fries', 20)
-    ])
-    , new Recipe('a test recipe 2 ', 'this is a test recipe 2', 'https://marketplace.canva.com/EAEzSj77_B4/2/0/1067w/canva-beige-cute-recipe-card-xDHAiGpfgKU.jpg',
+  //    new Ingredient('meat', 5),
+  //    new Ingredient('french fries', 20)
+  //  ])
+  //  , new Recipe('a test recipe 2 ', 'this is a test recipe 2', 'https://marketplace.canva.com/EAEzSj77_B4/2/0/1067w/canva-beige-cute-recipe-card-xDHAiGpfgKU.jpg',
 
-      [
+  //    [
 
-        new Ingredient('buns', 5),
-        new Ingredient('meat', 10)
-      ]
-    )
-  ];
+  //      new Ingredient('buns', 5),
+  //      new Ingredient('meat', 10)
+  //    ]
+  //  )
+  //];
 
+  private recipes: Recipe[] = [];
+
+  setRecipes(recipes: Recipe[]) {
+    this.recipes = recipes;
+    this.recipeChanged.next(this.recipes.slice());
+  }
 
   getRecipe() {
     return this.recipes.slice();

@@ -6,6 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./exercice-pipe.component.scss']
 })
 export class ExercicePipeComponent {
+
+  appStatus = new Promise((resolove, reject) => {
+
+    setTimeout(() => {
+      resolove('stable');
+    }, 2000);
+  });
   servers = [
     {
       instanceType: 'medium',

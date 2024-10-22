@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ServersComponent } from './components/servers/servers.component';
@@ -65,7 +65,8 @@ import { filterStates } from './components/exercices/exercice-pipe/filter-states
     BrowserModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    RecaptchaModule
+    RecaptchaModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
