@@ -29,6 +29,8 @@ import { RecaptchaModule } from 'ng-recaptcha';
 import { ExercicePipeComponent } from './components/exercices/exercice-pipe/exercice-pipe.component';
 import { ShortenPipe } from './components/exercices/exercice-pipe/shorten.pipe';
 import { filterStates } from './components/exercices/exercice-pipe/filter-states.pipe';
+import { AuthComponent } from './auth/auth.component';
+import { LoadingSpinner } from './project/components/shared/loading-spinner/loading-spinner-component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,7 +57,9 @@ import { filterStates } from './components/exercices/exercice-pipe/filter-states
     ReactiveFormTestComponent,
     ExercicePipeComponent,
     ShortenPipe,
-    filterStates
+    filterStates,
+    AuthComponent,
+    LoadingSpinner
 
 
 
