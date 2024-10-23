@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { NgForm } from "@angular/forms";
-import { AuthService } from "./auth.service";
+import { AuthResponseData, AuthService } from "./auth.service";
+import { Observable } from "rxjs";
 
 
 
@@ -32,28 +33,31 @@ export class AuthComponent implements OnInit {
     const email = form.value.email;
     const password = form.value.password;
     this.isLoading = true;
+
+    //Trying to make the code a bit linear
+    let authObservable: Observable<AuthResponseData>;
+
+
     if (this.isLoginMode) {
 
-      //.....
+      authObservable = this.authService.login(email, password);
 
     } else {
-      this.authService.signup(email, password)
-        .subscribe(response => {
-
-          console.log(response);
-          this.isLoading = false;
-        },
-          errorMessage => {
-
-            console.log(errorMessage);
-            this.error = errorMessage;
-            this.isLoading = false;
-          }
-        ),
-
-
-        form.reset();
+      authObservable = this.authService.signup(email, password);
     }
+
+    authObservable.subscribe(response => {
+
+      console.log(response);
+      this.isLoading = false;
+    },
+      errorMessage => {
+
+        console.log(errorMessage);
+        this.error = errorMessage;
+        this.isLoading = false;
+      });
+    form.reset();
   }
   ngOnInit(): void {
 
