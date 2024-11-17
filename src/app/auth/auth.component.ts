@@ -51,7 +51,10 @@ export class AuthComponent implements OnInit {
 
       console.log(response);
       this.isLoading = false;
+
       this.router.navigate(['/recipes']);
+
+
     },
       errorMessage => {
 

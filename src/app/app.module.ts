@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ServersComponent } from './components/servers/servers.component';
@@ -31,6 +31,8 @@ import { ShortenPipe } from './components/exercices/exercice-pipe/shorten.pipe';
 import { filterStates } from './components/exercices/exercice-pipe/filter-states.pipe';
 import { AuthComponent } from './auth/auth.component';
 import { LoadingSpinner } from './project/components/shared/loading-spinner/loading-spinner-component';
+import { AuthInterceptorService } from './auth/auth.interceptor.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -72,7 +74,9 @@ import { LoadingSpinner } from './project/components/shared/loading-spinner/load
     RecaptchaModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

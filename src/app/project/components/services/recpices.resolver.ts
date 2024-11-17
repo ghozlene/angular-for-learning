@@ -16,7 +16,8 @@ export class RecipesResolver implements Resolve<Recipe[]> {
 
     const recipes = this.recipeSerive.getRecipe();
     if (recipes.length === 0) {
-      return this.dataStorageServices.fetchRecipe();
+      console.log("recipe from resolver ", recipes);
+      return this.dataStorageServices.fetchRecipes();
     } else {
       return recipes;
     }
