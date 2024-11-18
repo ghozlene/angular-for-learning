@@ -19,7 +19,7 @@ export class AuthComponent implements OnInit {
   isLoginMode = true;
   isLoading = false;
 
-  error: string = "";
+  error: string | null = null;
   constructor(private authService: AuthService, private router: Router) { }
 
   onSwitchMode() {
@@ -67,5 +67,9 @@ export class AuthComponent implements OnInit {
   ngOnInit(): void {
 
   };
+
+  onHandleError() {
+    this.error = null;
+  }
 
 }

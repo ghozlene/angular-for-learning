@@ -32,6 +32,7 @@ import { filterStates } from './components/exercices/exercice-pipe/filter-states
 import { AuthComponent } from './auth/auth.component';
 import { LoadingSpinner } from './project/components/shared/loading-spinner/loading-spinner-component';
 import { AuthInterceptorService } from './auth/auth.interceptor.service';
+import { AlertComponent } from './project/components/shared/alert/alert.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import { AuthInterceptorService } from './auth/auth.interceptor.service';
     ShortenPipe,
     filterStates,
     AuthComponent,
-    LoadingSpinner
+    LoadingSpinner,
+    AlertComponent
 
 
 
