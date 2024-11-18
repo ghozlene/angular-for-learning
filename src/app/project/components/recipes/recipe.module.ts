@@ -9,6 +9,7 @@ import { CommonModule } from "@angular/common";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { RouterModule } from "@angular/router";
 import { BetterHighlightDirective } from "../../directives/better-highlight.directive";
+import { RecipesRoutingModule } from "./recipes-router.module";
 
 
 
@@ -27,7 +28,7 @@ import { BetterHighlightDirective } from "../../directives/better-highlight.dire
     FormsModule,
     CommonModule,
     ReactiveFormsModule,
-    RouterModule,
+    RecipesRoutingModule,
   ],
   exports: [
     RecipesComponent,
